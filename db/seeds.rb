@@ -7,9 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #BillingItem
 #Authors
-henrik = Author.create(name:"Henrik")
-anna= Author.create(name:"Anna")
-karsten=Author.create(name:"Karsten")
-
+henrik = Author.create(name:"Henrik",email:"henrik@henrixapp.de",password: 'password')
+henrik.skip_confirmation!
+anna= Author.create(name:"Anna",email:"anna@henrixapp.de",password: 'password')
+anna.skip_confirmation!
+karsten=Author.create(name:"Karsten",email:"karsten@henrixapp.de",password: 'password')
+karsten.skip_confirmation!
+henrik.save!
+anna.save!
+karsten.save!
 scheuermilch=BillingItem.create(title:"Scheuermilch", author:henrik,price:1.29)
 kartoffeln=BillingItem.create(title:"Kartoffeln",author:anna,price:2.99)

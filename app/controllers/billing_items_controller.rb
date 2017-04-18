@@ -1,6 +1,7 @@
 class BillingItemsController < ApplicationController
+  include Devise::Controllers::Helpers
   before_action :set_billing_item, only: [:show, :update, :destroy]
-
+  before_action :authenticate_author!
   # GET /billing_items
   def index
     @billing_items = BillingItem.all
